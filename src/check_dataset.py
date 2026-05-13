@@ -51,4 +51,58 @@ if duplicate_count > 0:
     print(duplicate_rows.head())
 else:
     print("No duplicate records found")
-    
+
+# Validate country and year consistency
+
+print("\n===================================")
+print(" COUNTRY-YEAR VALIDATION")
+print("===================================")
+
+print("\nCountry missing values:", df["country"].isnull().sum())
+print("Year missing values:", df["year"].isnull().sum())
+
+print("\nYear data type:", df["year"].dtype)
+print("Minimum year:", df["year"].min())
+print("Maximum year:", df["year"].max())
+
+invalid_years = df[(df["year"] < 1990) | (df["year"] > 2024)]
+print("\nInvalid year records:", len(invalid_years))
+
+blank_countries = df[df["country"].astype(str).str.strip() == ""]
+print("Blank country records:", len(blank_countries))
+
+print("Unique countries:", df["country"].nunique())
+
+# ===================================
+# DATA RANGE & ANOMALY CHECKS
+# ===================================
+
+print("\n===================================")
+print(" DATA RANGE & ANOMALY CHECKS")
+print("===================================")
+
+numeric_columns = [
+    "gdp",
+    "population",
+    "electricity_demand_per_capita",
+    "co2_per_capita",
+    "temperature_change_c"
+]
+
+for col in numeric_columns:
+    print(f"\n--- {col} ---")
+    print("Minimum:", df[col].min())
+    print("Maximum:", df[col].max())
+
+    negative_values = (df[col] < 0).sum()
+    print("Negative values:", negative_values)
+
+# Detect unusually high temperature values
+extreme_temp = df[df["temperature_change_c"] > 4]
+
+print("\nExtreme temperature records:", len(extreme_temp))
+
+if len(extreme_temp) > 0:
+    print(extreme_temp[["country", "year", "temperature_change_c"]].head())
+else:
+    print("No extreme temperature anomalies found")
