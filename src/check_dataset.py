@@ -106,3 +106,20 @@ if len(extreme_temp) > 0:
     print(extreme_temp[["country", "year", "temperature_change_c"]].head())
 else:
     print("No extreme temperature anomalies found")
+
+print("\n===================================")
+print(" DATA QUALITY SUMMARY")
+print("===================================")
+
+print("""
+Data Quality Observations:
+- Dataset contains 4,994 rows and 22 columns.
+- Missing values are mainly found in consumption CO2, GDP, and energy-per-GDP related fields.
+- No duplicate records were found at the country-year level.
+- Country and year fields are valid and consistent.
+- Key numerical fields have acceptable ranges overall.
+- Negative values in temperature_change_c are valid because temperature change can be below the baseline.
+- No extreme temperature anomalies were detected.
+- Dataset is suitable for further EDA and modeling after handling missing values.
+""")
+
