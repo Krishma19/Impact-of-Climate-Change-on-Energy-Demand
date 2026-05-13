@@ -10,3 +10,12 @@ print(df.columns.tolist())
 
 print("\nPreview:")
 print(df.head())
+
+print("\nData Types:")
+print(df.dtypes)
+
+print("\nBasic Info:")
+df.info()
+
+print("\nSummary Statistics:")
+print(df.describe())
