@@ -1,0 +1,95 @@
+
+US-3 EDA Findings: Trend Analysis of Energy Demand
+
+Dataset Information
+-------------------
+Dataset Used:
+- final_merged_partial_balanced.csv
+
+Year Range:
+- 2001 to 2022
+
+Total Countries:
+- 152
+
+Total Records:
+- 3344
+
+------------------------------------------------------------
+
+Research Question 1
+-------------------
+How does climate change influence electricity demand across countries between 2001 and 2022?
+
+Finding:
+The yearly trend analysis shows variation in electricity demand per capita over time. Temperature change also shows noticeable variation across years, suggesting possible climate influence on electricity consumption patterns.
+
+------------------------------------------------------------
+
+Research Question 2
+-------------------
+What is the relationship between temperature change, CO₂ emissions, and electricity demand per capita?
+
+Finding:
+The correlation between temperature change and electricity demand per capita is 0.210.
+
+The correlation between CO₂ emissions per capita and electricity demand per capita is 0.643.
+
+The analysis suggests that countries with higher emissions generally tend to show higher electricity demand levels.
+
+------------------------------------------------------------
+
+Research Question 3
+-------------------
+Can climate and economic indicators help explain electricity demand patterns?
+
+Finding:
+GDP shows a correlation of 0.132 with electricity demand per capita.
+
+Renewable electricity share shows a correlation of -0.022 with electricity demand per capita.
+
+These indicators appear useful for future predictive modeling and regression analysis.
+
+------------------------------------------------------------
+
+Hypothesis 1
+------------
+There is a positive relationship between temperature change and electricity demand per capita.
+
+EDA Evidence:
+Scatterplot and correlation analysis identified a relationship between temperature change and electricity demand.
+
+Observed correlation:
+0.210
+
+------------------------------------------------------------
+
+Hypothesis 2
+------------
+Countries with higher CO₂ emissions per capita tend to have higher electricity demand per capita.
+
+EDA Evidence:
+CO₂ emissions show a correlation of 0.643 with electricity demand per capita, supporting further statistical analysis.
+
+------------------------------------------------------------
+
+Hypothesis 3
+------------
+GDP and renewable energy indicators significantly influence electricity demand patterns.
+
+EDA Evidence:
+GDP correlation:
+0.132
+
+Renewable electricity share correlation:
+-0.022
+
+These variables should be included in future machine learning and predictive modeling tasks.
+
+------------------------------------------------------------
+
+Overall Conclusion
+------------------
+The exploratory data analysis identified meaningful relationships between electricity demand and multiple climate and economic indicators. GDP and CO₂ emissions appear to have stronger relationships with electricity demand, while temperature change and renewable electricity share also contribute important insights into global energy consumption patterns.
+
+The prepared dataset and EDA outputs are suitable for future statistical testing, regression analysis, and predictive modeling stages of the capstone project.
