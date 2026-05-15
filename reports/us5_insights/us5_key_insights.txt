@@ -1,0 +1,9 @@
+US-5 CLIMATE-ENERGY INSIGHTS REPORT
+============================================================
+
+1. Electricity demand shows strong relationships with GDP and CO₂ emissions.
+2. Countries with higher industrial activity generally show higher electricity demand.
+3. Renewable electricity share varies significantly across countries.
+4. Temperature change trends indicate long-term climate impacts globally.
+5. Economic indicators play an important role in energy consumption behavior.
+6. Climate-energy variables demonstrate measurable relationships suitable for future predictive modeling.
