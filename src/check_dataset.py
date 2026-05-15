@@ -225,3 +225,88 @@ else:
     print("\nUS-4 reports folder missing")
 
 print("\nUS-4 validation completed successfully.")
+
+# ===================================
+# US-5 INSIGHTS & FEATURE ENGINEERING VALIDATION
+# ===================================
+
+print("\n===================================")
+print(" US-5 INSIGHTS & FEATURE ENGINEERING VALIDATION")
+print("===================================")
+
+from pathlib import Path
+import pandas as pd
+
+# ------------------------------------------------------------
+# Check insights report
+# ------------------------------------------------------------
+
+insights_file = Path("reports/us5_insights/us5_key_insights.txt")
+
+print("\nChecking insights report:")
+
+if insights_file.exists():
+    print("[FOUND] reports/us5_insights/us5_key_insights.txt")
+else:
+    print("[MISSING] reports/us5_insights/us5_key_insights.txt")
+
+# ------------------------------------------------------------
+# Check feature engineered dataset
+# ------------------------------------------------------------
+
+feature_file = Path("data/processed/us5_feature_engineered_dataset.csv")
+
+print("\nChecking feature engineered dataset:")
+
+if feature_file.exists():
+
+    print("[FOUND] data/processed/us5_feature_engineered_dataset.csv")
+
+    us5_df = pd.read_csv(feature_file)
+
+    print("\nDataset Shape:")
+    print(us5_df.shape)
+
+    engineered_features = [
+        "electricity_to_co2_ratio",
+        "renewable_fossil_ratio",
+        "gdp_per_population",
+        "climate_pressure_index",
+        "energy_sustainability_score"
+    ]
+
+    print("\nChecking engineered features:")
+
+    for feature in engineered_features:
+
+        if feature in us5_df.columns:
+            print(f"[FOUND] {feature}")
+        else:
+            print(f"[MISSING] {feature}")
+
+    print("\nMissing values summary:")
+
+    print(
+        us5_df[engineered_features]
+        .isnull()
+        .sum()
+    )
+
+    print("\nPreview of engineered dataset:")
+
+    print(
+        us5_df[
+            [
+                "country",
+                "year",
+                "electricity_to_co2_ratio",
+                "renewable_fossil_ratio",
+                "gdp_per_population"
+            ]
+        ].head()
+    )
+
+else:
+    print("[MISSING] data/processed/us5_feature_engineered_dataset.csv")
+
+print("\nUS-5 validation completed successfully.")
