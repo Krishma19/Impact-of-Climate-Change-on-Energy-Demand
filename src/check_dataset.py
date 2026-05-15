@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("data/processed/final_merged.csv")
+df = pd.read_csv("data/processed/final_merged_partial_balanced.csv")
 
 print("===================================")
 print(" DATASET OVERVIEW")
@@ -123,3 +123,61 @@ Data Quality Observations:
 - Dataset is suitable for further EDA and modeling after handling missing values.
 """)
 
+
+# ===================================
+# US-3 TREND ANALYSIS VALIDATION
+# ===================================
+
+print("\n===================================")
+print(" US-3 TREND ANALYSIS VALIDATION")
+print("===================================")
+
+required_columns = [
+    "country",
+    "year",
+    "electricity_demand_per_capita",
+    "temperature_change_c",
+    "co2_per_capita",
+    "gdp",
+    "renewables_share_elec",
+    "fossil_share_elec",
+    "population"
+]
+
+print("\nChecking required columns:")
+
+missing_columns = [
+    col for col in required_columns
+    if col not in df.columns
+]
+
+if len(missing_columns) == 0:
+    print("All required US-3 columns exist")
+else:
+    print("Missing columns:", missing_columns)
+
+print("\nYear Range:")
+print(df["year"].min(), "to", df["year"].max())
+
+print("\nUnique Countries:")
+print(df["country"].nunique())
+
+# Check saved US-3 outputs
+from pathlib import Path
+
+trend_file = Path("data/processed/us3_yearly_trend_dataset.csv")
+selected_file = Path("data/processed/us3_selected_trend_data.csv")
+
+print("\nChecking US-3 output files:")
+
+if trend_file.exists():
+    print("Found:", trend_file)
+else:
+    print("Missing:", trend_file)
+
+if selected_file.exists():
+    print("Found:", selected_file)
+else:
+    print("Missing:", selected_file)
+
+print("\nUS-3 validation completed successfully.")
