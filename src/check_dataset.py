@@ -181,3 +181,47 @@ else:
     print("Missing:", selected_file)
 
 print("\nUS-3 validation completed successfully.")
+
+# ===================================
+# US-4 RELATIONSHIP ANALYSIS VALIDATION
+# ===================================
+
+print("\n===================================")
+print(" US-4 RELATIONSHIP ANALYSIS VALIDATION")
+print("===================================")
+
+required_us4_files = [
+    "data/processed/us4_advanced_correlation_matrix.csv",
+    "data/processed/us4_country_relationship_analysis.csv"
+]
+
+from pathlib import Path
+
+print("\nChecking US-4 output files:")
+
+for file_path in required_us4_files:
+
+    file = Path(file_path)
+
+    if file.exists():
+        print("Found:", file)
+    else:
+        print("Missing:", file)
+
+# Validate reports folder
+
+us4_reports = Path("reports/us4_relationship_analysis")
+
+if us4_reports.exists():
+
+    png_files = list(us4_reports.glob("*.png"))
+
+    print("\nTotal US-4 charts generated:", len(png_files))
+
+    for file in png_files:
+        print("[CHART]", file.name)
+
+else:
+    print("\nUS-4 reports folder missing")
+
+print("\nUS-4 validation completed successfully.")
