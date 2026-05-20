@@ -1,5 +1,5 @@
 
-US-3 EDA Findings: Trend Analysis of Energy Demand
+EDA Findings: Trend Analysis of Energy Demand
 
 Dataset Information
 -------------------
