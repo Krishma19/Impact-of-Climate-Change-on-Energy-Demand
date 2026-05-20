@@ -3,7 +3,7 @@
 **Project:** Impact of Climate Change on Energy Demand  
 **Sprint:** Modeling & baseline predictions  
 **User story:** US 7 — Modeling specification  
-**Status:** Draft — both teammates should confirm before US 8+
+**Status:** Confirmed — reviewed by Yuvraj Singh (US 7, Taiga task #63)
 
 ---
 
@@ -97,9 +97,9 @@ Report on **held-out test** data only:
 
 | Teammate | Confirmed (date) |
 |----------|------------------|
-| | |
-| | |
+| Ritu Patel | 20 May 2026 |
+| Yuvraj Singh | 20 May 2026 |
 
 ---
 
-*After both sign off, mark US 7 Done in Taiga and start US 8 / US 9.*
+*US 7 complete — proceed with US 8 / US 9.*
