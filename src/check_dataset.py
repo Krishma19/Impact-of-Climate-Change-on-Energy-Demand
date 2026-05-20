@@ -1,4 +1,5 @@
 import pandas as pd
+from pathlib import Path
 
 df = pd.read_csv("data/processed/final_merged_partial_balanced.csv")
 
@@ -35,12 +36,10 @@ print("\n===================================")
 print(" VALIDATION CHECKS")
 print("===================================")
 
-# Missing values
 print("\n--- Missing Values (%) ---")
 missing_df = (df.isnull().sum() / len(df)) * 100
 print(missing_df.sort_values(ascending=False))
 
-# Duplicate check
 print("\n--- Duplicate Check (country-year) ---")
 duplicate_count = df.duplicated(subset=["country", "year"]).sum()
 print("Duplicate country-year records:", duplicate_count)
@@ -51,8 +50,6 @@ if duplicate_count > 0:
     print(duplicate_rows.head())
 else:
     print("No duplicate records found")
-
-# Validate country and year consistency
 
 print("\n===================================")
 print(" COUNTRY-YEAR VALIDATION")
@@ -72,10 +69,6 @@ blank_countries = df[df["country"].astype(str).str.strip() == ""]
 print("Blank country records:", len(blank_countries))
 
 print("Unique countries:", df["country"].nunique())
-
-# ===================================
-# DATA RANGE & ANOMALY CHECKS
-# ===================================
 
 print("\n===================================")
 print(" DATA RANGE & ANOMALY CHECKS")
@@ -97,7 +90,6 @@ for col in numeric_columns:
     negative_values = (df[col] < 0).sum()
     print("Negative values:", negative_values)
 
-# Detect unusually high temperature values
 extreme_temp = df[df["temperature_change_c"] > 4]
 
 print("\nExtreme temperature records:", len(extreme_temp))
@@ -113,23 +105,18 @@ print("===================================")
 
 print("""
 Data Quality Observations:
-- Dataset contains 4,994 rows and 22 columns.
+- The dataset contains 4,994 rows and 22 columns.
 - Missing values are mainly found in consumption CO2, GDP, and energy-per-GDP related fields.
 - No duplicate records were found at the country-year level.
 - Country and year fields are valid and consistent.
 - Key numerical fields have acceptable ranges overall.
 - Negative values in temperature_change_c are valid because temperature change can be below the baseline.
 - No extreme temperature anomalies were detected.
-- Dataset is suitable for further EDA and modeling after handling missing values.
+- The dataset is suitable for exploratory analysis and predictive modeling after handling missing values.
 """)
 
-
-# ===================================
-# US-3 TREND ANALYSIS VALIDATION
-# ===================================
-
 print("\n===================================")
-print(" US-3 TREND ANALYSIS VALIDATION")
+print(" TREND ANALYSIS VALIDATION")
 print("===================================")
 
 required_columns = [
@@ -152,7 +139,7 @@ missing_columns = [
 ]
 
 if len(missing_columns) == 0:
-    print("All required US-3 columns exist")
+    print("All required trend analysis columns exist")
 else:
     print("Missing columns:", missing_columns)
 
@@ -162,13 +149,10 @@ print(df["year"].min(), "to", df["year"].max())
 print("\nUnique Countries:")
 print(df["country"].nunique())
 
-# Check saved US-3 outputs
-from pathlib import Path
-
 trend_file = Path("data/processed/us3_yearly_trend_dataset.csv")
 selected_file = Path("data/processed/us3_selected_trend_data.csv")
 
-print("\nChecking US-3 output files:")
+print("\nChecking trend analysis output files:")
 
 if trend_file.exists():
     print("Found:", trend_file)
@@ -180,27 +164,20 @@ if selected_file.exists():
 else:
     print("Missing:", selected_file)
 
-print("\nUS-3 validation completed successfully.")
-
-# ===================================
-# US-4 RELATIONSHIP ANALYSIS VALIDATION
-# ===================================
+print("\nTrend analysis validation completed successfully.")
 
 print("\n===================================")
-print(" US-4 RELATIONSHIP ANALYSIS VALIDATION")
+print(" RELATIONSHIP ANALYSIS VALIDATION")
 print("===================================")
 
-required_us4_files = [
+required_relationship_files = [
     "data/processed/us4_advanced_correlation_matrix.csv",
     "data/processed/us4_country_relationship_analysis.csv"
 ]
 
-from pathlib import Path
+print("\nChecking relationship analysis output files:")
 
-print("\nChecking US-4 output files:")
-
-for file_path in required_us4_files:
-
+for file_path in required_relationship_files:
     file = Path(file_path)
 
     if file.exists():
@@ -208,38 +185,23 @@ for file_path in required_us4_files:
     else:
         print("Missing:", file)
 
-# Validate reports folder
+relationship_reports = Path("reports/us4_relationship_analysis")
 
-us4_reports = Path("reports/us4_relationship_analysis")
+if relationship_reports.exists():
+    png_files = list(relationship_reports.glob("*.png"))
 
-if us4_reports.exists():
-
-    png_files = list(us4_reports.glob("*.png"))
-
-    print("\nTotal US-4 charts generated:", len(png_files))
+    print("\nTotal relationship analysis charts generated:", len(png_files))
 
     for file in png_files:
         print("[CHART]", file.name)
-
 else:
-    print("\nUS-4 reports folder missing")
+    print("\nRelationship analysis reports folder missing")
 
-print("\nUS-4 validation completed successfully.")
-
-# ===================================
-# US-5 INSIGHTS & FEATURE ENGINEERING VALIDATION
-# ===================================
+print("\nRelationship analysis validation completed successfully.")
 
 print("\n===================================")
-print(" US-5 INSIGHTS & FEATURE ENGINEERING VALIDATION")
+print(" INSIGHTS AND FEATURE ENGINEERING VALIDATION")
 print("===================================")
-
-from pathlib import Path
-import pandas as pd
-
-# ------------------------------------------------------------
-# Check insights report
-# ------------------------------------------------------------
 
 insights_file = Path("reports/us5_insights/us5_key_insights.txt")
 
@@ -250,22 +212,17 @@ if insights_file.exists():
 else:
     print("[MISSING] reports/us5_insights/us5_key_insights.txt")
 
-# ------------------------------------------------------------
-# Check feature engineered dataset
-# ------------------------------------------------------------
-
 feature_file = Path("data/processed/us5_feature_engineered_dataset.csv")
 
 print("\nChecking feature engineered dataset:")
 
 if feature_file.exists():
-
     print("[FOUND] data/processed/us5_feature_engineered_dataset.csv")
 
-    us5_df = pd.read_csv(feature_file)
+    feature_df = pd.read_csv(feature_file)
 
     print("\nDataset Shape:")
-    print(us5_df.shape)
+    print(feature_df.shape)
 
     engineered_features = [
         "electricity_to_co2_ratio",
@@ -278,8 +235,7 @@ if feature_file.exists():
     print("\nChecking engineered features:")
 
     for feature in engineered_features:
-
-        if feature in us5_df.columns:
+        if feature in feature_df.columns:
             print(f"[FOUND] {feature}")
         else:
             print(f"[MISSING] {feature}")
@@ -287,7 +243,7 @@ if feature_file.exists():
     print("\nMissing values summary:")
 
     print(
-        us5_df[engineered_features]
+        feature_df[engineered_features]
         .isnull()
         .sum()
     )
@@ -295,7 +251,7 @@ if feature_file.exists():
     print("\nPreview of engineered dataset:")
 
     print(
-        us5_df[
+        feature_df[
             [
                 "country",
                 "year",
@@ -309,4 +265,4 @@ if feature_file.exists():
 else:
     print("[MISSING] data/processed/us5_feature_engineered_dataset.csv")
 
-print("\nUS-5 validation completed successfully.")
+print("\nInsights and feature engineering validation completed successfully.")
