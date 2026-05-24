@@ -50,3 +50,17 @@ Key observations from the analysis:
 - No major anomalies or invalid records were identified during validation.
 
 These checks helped ensure that the dataset is reliable and suitable for further analysis, dashboard development, and machine learning tasks.
+
+## Modeling (Sprint 5)
+
+Baseline models predict `electricity_demand_per_capita` from climate and related features. See `docs/modeling_spec.md` for the target, feature list, train/test split (2001–2018 train, 2019–2022 test), and evaluation metrics.
+
+Run notebooks in order from the repository root:
+
+1. `notebooks/modeling/01_data_prep.ipynb` — modeling-ready data frame
+2. `notebooks/modeling/02_train_test_split.ipynb` — time-based train/test split
+3. `notebooks/modeling/03_baseline_linear.ipynb` — Ridge baseline (US 10)
+4. `notebooks/modeling/04_baseline_tree.ipynb` — Random Forest baseline (US 11)
+5. `notebooks/modeling/05_baseline_comparison.ipynb` — compare models (US 12)
+
+Key outputs are written to `reports/` (metrics CSVs, comparison summary, figures).
