@@ -1,0 +1,21 @@
+US 12 — BASELINE MODEL COMPARISON SUMMARY
+============================================================
+
+Setup:
+- Same train/test split as US 9 (train 2001–2018, test 2019–2022)
+- Target: electricity_demand_per_capita
+- Six features per docs/modeling_spec.md
+
+Test metrics:
+- Ridge (US 10): RMSE=4374.14, MAE=1893.42, R²=0.4599
+- Random Forest (US 11): RMSE=2428.83, MAE=859.85, R²=0.8335
+
+Findings:
+1. Random Forest outperforms Ridge on all three test metrics.
+2. Ridge is a simpler linear baseline; tree model captures non-linear patterns better.
+3. US 11 feature importance: co2_per_capita and electricity mix shares ranked highest.
+4. temperature_change_c had low importance in the pooled Random Forest model.
+
+Caveat:
+- Results are predictive/associative, not causal (see docs/modeling_spec.md).
+- Pooled global models do not control for country fixed effects.
