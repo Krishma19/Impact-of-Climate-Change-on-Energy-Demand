@@ -1,5 +1,6 @@
-pandas
-jupyter
-notebook
+streamlit
+plotly
 scikit-learn
+pandas
 matplotlib
+seaborn

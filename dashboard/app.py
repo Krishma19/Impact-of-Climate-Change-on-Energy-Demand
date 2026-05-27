@@ -1,8 +1,8 @@
 from pathlib import Path
 
 import pandas as pd
-import streamlit as st
 import plotly.express as px
+import streamlit as st
 from sklearn.linear_model import LinearRegression
 
 st.set_page_config(
@@ -13,20 +13,12 @@ st.set_page_config(
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_PATH = REPO_ROOT / "data" / "processed" / "modeling_ready.csv"
 FIGURES = REPO_ROOT / "reports" / "figures"
-
-df = pd.read_csv(DATA_PATH)
+METRICS_PATH = REPO_ROOT / "reports" / "us12_baseline_comparison.csv"
 
 st.markdown("""
 <style>
 .stApp {
     background: linear-gradient(135deg, #eef7ff 0%, #f7fff4 45%, #fff7ed 100%);
-}
-.metric-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 18px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
 }
 .big-title {
     font-size: 42px;
@@ -40,11 +32,31 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<div class="big-title">Climate Change Impact on Energy Demand</div>', unsafe_allow_html=True)
 st.markdown(
-    '<div class="subtitle">Interactive dashboard for climate trends, energy demand, relationships, model results, and future forecasting.</div>',
+    '<div class="big-title">Climate Change Impact on Energy Demand</div>',
     unsafe_allow_html=True
 )
+
+st.markdown(
+    '<div class="subtitle">Interactive dashboard for climate trends, energy demand, model results, and forecasting.</div>',
+    unsafe_allow_html=True
+)
+
+if not DATA_PATH.exists():
+    st.error(
+        "Missing modeling_ready.csv. Please run the modeling pipeline first: python src/run_modeling.py"
+    )
+    st.stop()
+
+df = pd.read_csv(DATA_PATH)
+
+
+def show_image(path: Path, caption: str):
+    if path.exists():
+        st.image(str(path), caption=caption, use_container_width=True)
+    else:
+        st.warning(f"Missing figure: {path.name}. Please run python src/run_visualizations.py")
+
 
 st.sidebar.header("Dashboard Filters")
 
@@ -55,6 +67,10 @@ selected_countries = st.sidebar.multiselect(
     countries,
     default=["Canada"] if "Canada" in countries else countries[:1]
 )
+
+if not selected_countries:
+    st.warning("Please select at least one country.")
+    st.stop()
 
 year_range = st.sidebar.slider(
     "Select Year Range",
@@ -75,11 +91,6 @@ x_var = st.sidebar.selectbox(
         "renewables_share_elec",
         "fossil_share_elec"
     ]
-)
-
-y_var = st.sidebar.selectbox(
-    "Scatter Y Variable",
-    ["electricity_demand_per_capita"],
 )
 
 forecast_country = st.sidebar.selectbox(
@@ -115,7 +126,6 @@ with tab1:
     col4.metric(
         "Avg Demand",
         round(filtered_df["electricity_demand_per_capita"].mean(), 2)
-        if len(filtered_df) > 0 else 0
     )
 
     st.subheader(f"Top {top_n} Countries by Average Electricity Demand")
@@ -139,6 +149,7 @@ with tab1:
             "country": "Country"
         }
     )
+
     fig.update_traces(texttemplate="%{text:.2f}", textposition="outside")
     fig.update_layout(yaxis={"categoryorder": "total ascending"})
     st.plotly_chart(fig, use_container_width=True)
@@ -169,14 +180,15 @@ with tab2:
         y="electricity_demand_per_capita",
         color="country",
         markers=True,
+        text=yearly["electricity_demand_per_capita"].round(2),
         title="Electricity Demand Over Time",
         labels={
             "year": "Year",
-            "electricity_demand_per_capita": "Electricity Demand Per Capita",
-            "country": "Country"
+            "electricity_demand_per_capita": "Electricity Demand Per Capita"
         }
     )
-    fig.update_traces(mode="lines+markers+text", text=yearly["electricity_demand_per_capita"].round(2), textposition="top center")
+
+    fig.update_traces(textposition="top center")
     st.plotly_chart(fig, use_container_width=True)
 
     fig = px.line(
@@ -185,14 +197,15 @@ with tab2:
         y="temperature_change_c",
         color="country",
         markers=True,
+        text=yearly["temperature_change_c"].round(2),
         title="Temperature Change Over Time",
         labels={
             "year": "Year",
-            "temperature_change_c": "Temperature Change (°C)",
-            "country": "Country"
+            "temperature_change_c": "Temperature Change (°C)"
         }
     )
-    fig.update_traces(mode="lines+markers+text", text=yearly["temperature_change_c"].round(2), textposition="top center")
+
+    fig.update_traces(textposition="top center")
     st.plotly_chart(fig, use_container_width=True)
 
     fig = px.line(
@@ -201,14 +214,15 @@ with tab2:
         y="renewables_share_elec",
         color="country",
         markers=True,
+        text=yearly["renewables_share_elec"].round(2),
         title="Renewable Electricity Share Over Time",
         labels={
             "year": "Year",
-            "renewables_share_elec": "Renewable Electricity Share",
-            "country": "Country"
+            "renewables_share_elec": "Renewable Electricity Share"
         }
     )
-    fig.update_traces(mode="lines+markers+text", text=yearly["renewables_share_elec"].round(2), textposition="top center")
+
+    fig.update_traces(textposition="top center")
     st.plotly_chart(fig, use_container_width=True)
 
 with tab3:
@@ -217,24 +231,24 @@ with tab3:
     fig = px.scatter(
         filtered_df,
         x=x_var,
-        y=y_var,
+        y="electricity_demand_per_capita",
         color="country",
         hover_data=["year", "country"],
         trendline="ols",
-        title=f"{x_var} vs {y_var}",
+        title=f"{x_var.replace('_', ' ').title()} vs Electricity Demand",
         labels={
             x_var: x_var.replace("_", " ").title(),
-            y_var: y_var.replace("_", " ").title()
+            "electricity_demand_per_capita": "Electricity Demand Per Capita"
         }
     )
+
     fig.update_traces(marker=dict(size=9, opacity=0.75))
     st.plotly_chart(fig, use_container_width=True)
 
-    st.subheader("Correlation Heatmap")
-    st.image(str(FIGURES / "correlation_heatmap.png"), use_container_width=True)
+    show_image(FIGURES / "correlation_heatmap.png", "Correlation Heatmap")
 
     st.info(
-        "Relationship charts help evaluate how climate, emissions, renewable energy, and economic indicators relate to electricity demand."
+        "These charts help evaluate relationships between climate, emissions, renewable energy, and electricity demand."
     )
 
 with tab4:
@@ -243,17 +257,14 @@ with tab4:
     col1, col2 = st.columns(2)
 
     with col1:
-        st.subheader("Model Comparison")
-        st.image(str(FIGURES / "model_comparison.png"), use_container_width=True)
+        show_image(FIGURES / "model_comparison.png", "Model Comparison")
 
     with col2:
-        st.subheader("Feature Importance")
-        st.image(str(FIGURES / "us11_feature_importance.png"), use_container_width=True)
+        show_image(FIGURES / "us11_feature_importance.png", "Random Forest Feature Importance")
 
-    metrics_path = REPO_ROOT / "reports" / "us12_baseline_comparison.csv"
+    if METRICS_PATH.exists():
+        metrics_df = pd.read_csv(METRICS_PATH)
 
-    if metrics_path.exists():
-        metrics_df = pd.read_csv(metrics_path)
         st.subheader("Model Metrics Table")
         st.dataframe(metrics_df)
 
@@ -266,16 +277,19 @@ with tab4:
             title="Model Metrics Comparison",
             labels={"value": "Metric Value", "model": "Model"}
         )
-        st.plotly_chart(fig, use_container_width=True)
 
-    st.success(
-        "Random Forest shows stronger predictive performance compared with linear baseline models."
-    )
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.warning("Missing model metrics file: reports/us12_baseline_comparison.csv")
 
 with tab5:
     st.header("Future Electricity Demand Forecasting")
 
     country_df = df[df["country"] == forecast_country].sort_values("year").copy()
+
+    if len(country_df) < 2:
+        st.warning("Not enough data available for forecasting.")
+        st.stop()
 
     X = country_df[["year"]]
     y = country_df["electricity_demand_per_capita"]
@@ -284,14 +298,21 @@ with tab5:
     model.fit(X, y)
 
     last_year = int(country_df["year"].max())
-    future_years = list(range(last_year + 1, last_year + forecast_years + 1))
 
-    future_df = pd.DataFrame({"year": future_years})
+    future_df = pd.DataFrame({
+        "year": list(range(last_year + 1, last_year + forecast_years + 1))
+    })
+
     future_df["electricity_demand_per_capita"] = model.predict(future_df[["year"]])
     future_df["country"] = forecast_country
     future_df["type"] = "Forecast"
 
-    actual_df = country_df[["country", "year", "electricity_demand_per_capita"]].copy()
+    actual_df = country_df[[
+        "country",
+        "year",
+        "electricity_demand_per_capita"
+    ]].copy()
+
     actual_df["type"] = "Actual"
 
     combined = pd.concat([actual_df, future_df], ignore_index=True)
@@ -310,6 +331,7 @@ with tab5:
             "type": "Data Type"
         }
     )
+
     fig.update_traces(texttemplate="%{text:.2f}", textposition="top center")
     st.plotly_chart(fig, use_container_width=True)
 
@@ -317,5 +339,5 @@ with tab5:
     st.dataframe(future_df[["country", "year", "electricity_demand_per_capita"]])
 
     st.warning(
-        "Forecast is based on a simple linear trend model and should be interpreted as an exploratory projection, not a final prediction."
+        "Forecast uses a simple linear trend model and should be interpreted as exploratory, not causal."
     )
