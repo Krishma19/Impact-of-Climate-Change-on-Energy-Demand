@@ -246,6 +246,7 @@ Implemented baseline predictive models:
 ✅ Forecasting Analysis
 
 ✅ Final Capstone Report
+
 ---
 
 # 🖥️ Dashboard Features
