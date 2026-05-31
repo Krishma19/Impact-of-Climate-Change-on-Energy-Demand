@@ -10,7 +10,7 @@
 
 ## 📖 Project Overview
 
-This capstone project analyzes the relationship between climate change indicators and electricity demand across approximately **150 countries** using yearly data from **2001–2022**.
+This capstone project analyzes the relationship between climate change indicators and electricity demand across approximately **192 countries** using yearly data from **2001–2022**.
 
 In this study, **energy demand refers specifically to electricity demand per capita**, representing the average electricity consumption per person within a country.
 
