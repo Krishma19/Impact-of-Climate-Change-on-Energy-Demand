@@ -111,7 +111,7 @@ https://www.fao.org/faostat/en/#data/ET
 🔗 **World Bank Open Data**
 https://data.worldbank.org/
 
-These datasets were cleaned, validated, and integrated into a unified country-year analytical dataset covering approximately **150 countries from 2001–2022**.
+These datasets were cleaned, validated, and integrated into a unified country-year analytical dataset covering approximately **192 countries from 2001–2022**.
 
 
 ---
