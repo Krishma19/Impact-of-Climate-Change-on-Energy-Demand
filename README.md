@@ -1,46 +1,122 @@
-# Climate Change Impact on Energy Demand
+# 🌍 Impact of Climate Change on Energy Demand
 
-## Project Overview
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green)
+![Dashboard](https://img.shields.io/badge/Streamlit-Dashboard-red)
+![Status](https://img.shields.io/badge/Project-Completed-success)
+![Capstone](https://img.shields.io/badge/MDA-Capstone-orange)
 
-This capstone project analyzes the relationship between climate change indicators and electricity demand across approximately 150 countries using yearly data from 2001 to 2022.
+---
 
-The project investigates how climate-related variables such as temperature change, CO₂ emissions, renewable energy usage, fossil fuel electricity share, GDP, and population influence electricity demand patterns over time.
+## 📖 Project Overview
+
+This capstone project analyzes the relationship between climate change indicators and electricity demand across approximately **150 countries** using yearly data from **2001–2022**.
+
+In this study, **energy demand refers specifically to electricity demand per capita**, representing the average electricity consumption per person within a country.
+
+The analysis investigates how climate-related and economic variables influence electricity demand patterns over time, including:
+
+* 🌡️ Temperature Change
+* 🌍 CO₂ Emissions
+* ♻️ Renewable Energy Usage
+* 🏭 Fossil Fuel Electricity Share
+* 💰 Gross Domestic Product (GDP)
+* 👥 Population
 
 The project combines:
-* Exploratory Data Analysis (EDA)
-* Statistical Analysis
-* Predictive Modeling
-* Machine Learning
-* Interactive Dashboard Visualization
-* Forecasting
+
+* 📊 Exploratory Data Analysis (EDA)
+* 📈 Statistical Analysis
+* 🧪 Hypothesis Testing
+* 🤖 Machine Learning Modeling
+* 🔮 Forecasting
+* 🖥️ Interactive Dashboard Development
 
 ---
 
-# Research Questions
+# 🔄 Project Workflow
 
-1. How does climate change influence electricity demand across countries between 2001 and 2022?
-2. What is the relationship between temperature change, CO₂ emissions, and electricity demand per capita?
-3. Can climate and economic indicators be used to predict future electricity demand patterns?
-
----
-
-# Hypotheses
-
-* H1: There is a positive relationship between temperature change and electricity demand per capita.
-* H2: Countries with higher CO₂ emissions per capita tend to have higher electricity demand per capita.
-* H3: Renewable energy usage and GDP significantly influence electricity demand patterns across countries.
-
----
-
-# Data Sources
-The project uses publicly available datasets from:
-* Our World in Data (OWID)
-* FAOSTAT
-* World Bank
+Raw Climate & Energy Data
+⬇️
+Data Cleaning & Integration
+⬇️
+Exploratory Data Analysis (EDA)
+⬇️
+Hypothesis Testing
+⬇️
+Feature Engineering
+⬇️
+Machine Learning Models
+⬇️
+Visualization & Dashboard
+⬇️
+Forecasting & Insights
 
 ---
 
-# Final Dataset Variables
+# 🎯 Research Questions
+
+### RQ1
+
+How does climate change influence electricity demand across countries between 2001 and 2022?
+
+### RQ2
+
+What is the relationship between temperature change, CO₂ emissions, and electricity demand per capita?
+
+### RQ3
+
+Can climate and economic indicators be used to predict future electricity demand patterns?
+
+---
+
+# 🧪 Hypotheses
+
+### H1
+
+There is a positive relationship between temperature change and electricity demand per capita.
+
+### H0
+
+There is no significant relationship between temperature change and electricity demand per capita.
+
+### H2
+
+Countries with higher CO₂ emissions per capita tend to have higher electricity demand per capita.
+
+### H3
+
+Renewable energy usage and GDP significantly influence electricity demand patterns across countries.
+
+---
+
+# 🌐 Data Sources
+
+The project utilizes publicly available datasets from trusted international organizations and research platforms.
+
+| Source                | Description                                                               |
+| ------------------------------- | ------------------------------------------------------------------------- |
+| 🌍 **Our World in Data (OWID)** | Electricity demand, CO₂ emissions, GDP, population, and energy indicators |
+| 🌾 **FAOSTAT**                  | Annual temperature change and climate indicators                          |
+| 🏦 **World Bank**               | Renewable energy and economic indicators                                  |
+
+### Dataset Links
+
+🔗 **Our World in Data (OWID)**
+https://github.com/owid/energy-data
+
+🔗 **FAOSTAT Climate Change Indicators**
+https://www.fao.org/faostat/en/#data/ET
+
+🔗 **World Bank Open Data**
+https://data.worldbank.org/
+
+These datasets were cleaned, validated, and integrated into a unified country-year analytical dataset covering approximately **150 countries from 2001–2022**.
+
+
+---
+
+# 📋 Final Dataset Variables
 
 | Variable                      | Description                   |
 | ----------------------------- | ----------------------------- |
@@ -56,7 +132,7 @@ The project uses publicly available datasets from:
 
 ---
 
-# Project Structure
+# 📂 Project Structure
 
 ```text
 Impact-of-Climate-Change-on-Energy-Demand/
@@ -75,11 +151,13 @@ Impact-of-Climate-Change-on-Energy-Demand/
 │
 ├── reports/
 │   ├── figures/
-│   └── *.csv
+│   ├── hypothesis_testing/
+│   └── outputs/
 │
 ├── src/
 │   ├── run_modeling.py
-│   └── run_visualizations.py
+│   ├── run_visualizations.py
+│   └── verify_eda_outputs.py
 │
 ├── requirements.txt
 └── README.md
@@ -87,101 +165,128 @@ Impact-of-Climate-Change-on-Energy-Demand/
 
 ---
 
-# Analytical Workflow
+# 🔬 Analytical Methodology
 
-## 1. Data Collection and Preparation
+## 1️⃣ Data Collection & Preparation
 
 * Collected multi-country climate and energy datasets
-* Cleaned and merged country-year data
+* Cleaned and integrated country-year records
 * Created modeling-ready dataset
 
-## 2. Exploratory Data Analysis (EDA)
+## 2️⃣ Exploratory Data Analysis (EDA)
 
-* Trend analysis
-* Correlation analysis
-* Statistical summaries
-* Cross-country comparisons
+* Trend Analysis
+* Correlation Analysis
+* Statistical Summaries
+* Cross-Country Comparisons
 
-## 3. Statistical Analysis
+## 3️⃣ Statistical Analysis
 
-* Pearson correlation
-* Regression analysis
-* Hypothesis testing
+* Pearson Correlation
+* Multiple Regression Analysis
+* Hypothesis Testing
 
-## 4. Predictive Modeling
+## 4️⃣ Machine Learning Modeling
 
-The following machine learning models were implemented:
+Implemented baseline predictive models:
 
 * Linear Regression
 * Ridge Regression
 * Random Forest Regression
 
-## 5. Visualization and Dashboard
+## 5️⃣ Visualization & Dashboard Development
 
-The project includes:
-
-* Climate and energy visualization charts
-* Correlation heatmap
-* Model comparison charts
-* Feature importance analysis
-* Interactive Streamlit dashboard
-* Forecasting section
+* Climate Trend Visualizations
+* Correlation Heatmaps
+* Model Comparison Charts
+* Feature Importance Analysis
+* Interactive Streamlit Dashboard
+* Forecasting Analysis
 
 ---
 
-# Dashboard Features
+# 🏆 Model Performance
 
-The Streamlit dashboard includes:
+| Model                    | Test R² Score |
+| ------------------------ | ------------- |
+| Ridge Regression         | 0.4599        |
+| Random Forest Regression | 0.8335        |
 
-* Interactive country filters
-* Year range filters
-* KPI metrics
-* Trend analysis charts
-* Relationship analysis charts
-* Correlation heatmap
-* Model comparison section
-* Feature importance visualization
-* Future forecasting
-* Downloadable filtered data
+✅ Random Forest achieved the strongest predictive performance and was selected as the best-performing baseline model.
 
 ---
 
-# Installation
+# 📦 Project Deliverables
+
+* ✅ Integrated Climate-Energy Dataset
+* ✅ Exploratory Data Analysis (EDA)
+* ✅ Hypothesis Testing
+* ✅ Feature Engineering
+* ✅ Ridge Regression Baseline Model
+* ✅ Random Forest Baseline Model
+* ✅ Model Comparison Analysis
+* ✅ Visualization Suite
+* ✅ Interactive Streamlit Dashboard
+* ✅ Forecasting Analysis
+* ✅ Final Capstone Report
+
+---
+
+# 🖥️ Dashboard Features
+
+* 🌎 Interactive Country Filters
+* 📅 Year Range Filters
+* 📈 Climate Trend Analysis
+* ⚡ Electricity Demand Trends
+* 🔥 Relationship Analysis
+* 📊 Correlation Heatmaps
+* 🤖 Model Performance Comparison
+* 🌲 Feature Importance Visualization
+* 🔮 Forecasting Module
+* 📥 Downloadable Filtered Data
+
+---
+
+# 📸 Dashboard Preview
+
+
+---
+
+# ⚙️ Installation & Setup
 
 ## Clone Repository
 
 ```bash
 git clone https://github.com/Krishma19/Impact-of-Climate-Change-on-Energy-Demand.git
+
 cd Impact-of-Climate-Change-on-Energy-Demand
 ```
 
----
-
-# Install Dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-# Run Modeling Pipeline
+## Run Modeling Pipeline
 
 ```bash
 python src/run_modeling.py
 ```
 
----
-
-# Run Visualization Pipeline
+## Run Visualization Pipeline
 
 ```bash
 python src/run_visualizations.py
 ```
 
----
+## Verify EDA Outputs
 
-# Run Dashboard
+```bash
+python src/verify_eda_outputs.py
+```
+
+## Launch Dashboard
 
 ```bash
 streamlit run dashboard/app.py
@@ -189,17 +294,17 @@ streamlit run dashboard/app.py
 
 ---
 
-# Key Findings
+# 💡 Key Findings
 
-* Climate change indicators influence electricity demand patterns.
-* Temperature changes and CO₂ emissions show relationships with electricity demand.
-* Renewable energy and GDP contribute to electricity demand variations.
-* Random Forest achieved the strongest predictive performance among baseline models.
-* Forecasting analysis demonstrates future electricity demand trends using historical data.
+* Climate change indicators significantly influence electricity demand patterns.
+* Temperature changes and CO₂ emissions demonstrate measurable relationships with electricity demand.
+* Economic and renewable energy indicators contribute to variations in electricity consumption.
+* Random Forest produced the strongest predictive performance among baseline models.
+* Forecasting analysis highlights future electricity demand trends using historical climate and energy data.
 
 ---
 
-# Technologies Used
+# 🛠️ Technologies Used
 
 * Python
 * Pandas
@@ -215,32 +320,56 @@ streamlit run dashboard/app.py
 
 ---
 
-# Future Improvements
+# 🔮 Future Research Directions
 
-Potential future enhancements include:
-
-* Advanced time-series forecasting models
-* Regional climate segmentation
-* Deep learning approaches
-* Real-time energy data integration
-* Deployment to cloud platforms
+* 🌍 Expand analysis to include precipitation, humidity, drought severity, and extreme weather events.
+* 📈 Apply advanced forecasting models such as ARIMA, Prophet, LSTM, and Transformer-based approaches.
+* 🗺️ Conduct region-specific climate-energy analyses.
+* ⚡ Incorporate real-time energy consumption and smart-grid data.
+* 🤖 Explore deep learning and ensemble learning techniques.
+* 🏛️ Investigate the impact of government energy policies and carbon pricing mechanisms.
+* 🌱 Evaluate renewable energy transitions and electrification strategies.
+* ☁️ Deploy the framework as a cloud-based decision-support system.
 
 ---
 
-# Team
+# 📚 References
 
-Master of Data Analytics Capstone Project  
-University of Niagara Falls Canada  
+- NASA Climate Data: https://data.giss.nasa.gov/gistemp/
+- Our World in Data Energy Dataset: https://github.com/owid/energy-data
+- FAOSTAT Climate Indicators: https://www.fao.org/faostat/en/#data/ET
+- World Bank Open Data: https://data.worldbank.org/
+- International Energy Agency (IEA): https://www.iea.org/
 
-## Team Members
-
-- Krishma Patel-(https://github.com/Krishma19)
-- Mohammed Shoaib-(https://github.com/mshoaib239)
-- Ritu Patel-(https://github.com/RituPatel21)
-- Sunny Garasiya-(https://github.com/SunnyGarasiya0001)
-- Yuvraj Thakur-(https://github.com/yuvrajthakur2709-maker)
 ---
 
-# License
+# 👥 Team Members
 
-This project is developed for academic and educational purposes.
+| Name            | GitHub                                    |
+| --------------- | ----------------------------------------- |
+| Krishma Patel   | https://github.com/Krishma19              |
+| Mohammed Shoaib | https://github.com/mshoaib239             |
+| Ritu Patel      | https://github.com/RituPatel21            |
+| Sunny Garasiya  | https://github.com/SunnyGarasiya0001      |
+| Yuvraj Thakur   | https://github.com/yuvrajthakur2709-maker |
+
+---
+
+# 🎓 Academic Information
+
+**Master of Data Analytics (MDA)**
+**University of Niagara Falls Canada**
+
+**Capstone Project:** Analyzing the Impact of Climate Change on Energy Demand
+
+---
+
+# 📄 License
+
+This project was developed for academic and educational purposes.
+
+---
+
+# ⭐ About
+
+This project analyzes how climate change affects electricity demand by studying temperature change, CO₂ emissions, renewable energy usage, and economic indicators. Through data analytics, machine learning, forecasting, and dashboard visualization, the project provides actionable insights for sustainable energy planning and climate-aware decision-making.
