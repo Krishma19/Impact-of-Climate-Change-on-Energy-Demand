@@ -370,7 +370,7 @@ streamlit run dashboard/app.py
 
 ---
 
-## 🔮 Future Research Directions
+# 🔮 Future Research Directions
 
 🌍 Expand analysis to include precipitation, humidity, drought severity, and extreme weather events.
 
