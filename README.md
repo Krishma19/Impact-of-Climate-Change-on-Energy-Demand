@@ -249,6 +249,7 @@ Implemented baseline predictive models:
 
 # 📸 Dashboard Preview
 
+    "add images"
 
 ---
 

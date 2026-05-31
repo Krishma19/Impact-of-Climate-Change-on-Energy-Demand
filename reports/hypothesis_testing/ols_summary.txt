@@ -4,7 +4,7 @@ Dep. Variable:     electricity_demand_per_capita   R-squared:                   
 Model:                                       OLS   Adj. R-squared:                  0.461
 Method:                            Least Squares   F-statistic:                     647.2
 Date:                           Sun, 31 May 2026   Prob (F-statistic):               0.00
-Time:                                   03:21:03   Log-Likelihood:                -36842.
+Time:                                   05:09:50   Log-Likelihood:                -36842.
 No. Observations:                           3778   AIC:                         7.370e+04
 Df Residuals:                               3772   BIC:                         7.373e+04
 Df Model:                                      5                                         
