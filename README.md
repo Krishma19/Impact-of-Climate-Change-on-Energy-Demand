@@ -5,6 +5,8 @@
 ![Dashboard](https://img.shields.io/badge/Streamlit-Dashboard-red)
 ![Status](https://img.shields.io/badge/Project-Completed-success)
 ![Capstone](https://img.shields.io/badge/MDA-Capstone-orange)
+<img width="925" height="478" alt="image" src="https://github.com/user-attachments/assets/14762729-1b52-443b-8571-0e3f65d56c72" />
+
 
 ---
 
