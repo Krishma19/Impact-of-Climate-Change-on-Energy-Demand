@@ -1,0 +1,31 @@
+                                  OLS Regression Results                                 
+=========================================================================================
+Dep. Variable:     electricity_demand_per_capita   R-squared:                       0.462
+Model:                                       OLS   Adj. R-squared:                  0.461
+Method:                            Least Squares   F-statistic:                     647.2
+Date:                           Sun, 31 May 2026   Prob (F-statistic):               0.00
+Time:                                   03:21:03   Log-Likelihood:                -36842.
+No. Observations:                           3778   AIC:                         7.370e+04
+Df Residuals:                               3772   BIC:                         7.373e+04
+Df Model:                                      5                                         
+Covariance Type:                       nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                 -1221.3574    179.336     -6.810      0.000   -1572.961    -869.753
+temperature_change_c    742.4373    121.954      6.088      0.000     503.335     981.540
+co2_per_capita          593.4767     11.534     51.455      0.000     570.863     616.090
+gdp                    2.972e-10    5.3e-11      5.608      0.000    1.93e-10    4.01e-10
+renewables_share_elec    40.0788      2.168     18.487      0.000      35.828      44.329
+population            -3.266e-06    6.8e-07     -4.800      0.000    -4.6e-06   -1.93e-06
+==============================================================================
+Omnibus:                     4089.890   Durbin-Watson:                   0.086
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           451364.310
+Skew:                           5.318   Prob(JB):                         0.00
+Kurtosis:                      55.480   Cond. No.                     5.98e+12
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 5.98e+12. This might indicate that there are
+strong multicollinearity or other numerical problems.

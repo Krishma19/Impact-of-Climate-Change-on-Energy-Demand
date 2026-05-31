@@ -1,0 +1,8 @@
+check,value
+total_rows,4994
+total_columns,22
+unique_countries,192
+minimum_year,1991
+maximum_year,2024
+duplicate_country_year_rows,0
+total_missing_values,7853
