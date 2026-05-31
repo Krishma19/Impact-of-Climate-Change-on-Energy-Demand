@@ -5,8 +5,6 @@
 ![Dashboard](https://img.shields.io/badge/Streamlit-Dashboard-red)
 ![Status](https://img.shields.io/badge/Project-Completed-success)
 ![Capstone](https://img.shields.io/badge/MDA-Capstone-orange)
-<img width="925" height="478" alt="image" src="https://github.com/user-attachments/assets/14762729-1b52-443b-8571-0e3f65d56c72" />
-
 
 ---
 
@@ -251,10 +249,21 @@ Implemented baseline predictive models:
 
 # 📸 Dashboard Preview
 
-<img width="1920" height="1008" alt="Dashboard_Overview" src="https://github.com/user-attachments/assets/ae148ce4-c7d8-4ad9-9fc8-f5bd25a5cd19" />
-<img width="947" height="460" alt="image" src="https://github.com/user-attachments/assets/091f0ccf-1331-49c1-9ee7-1a8b9514b82d" />
-<img width="930" height="457" alt="image" src="https://github.com/user-attachments/assets/f20ef7c8-0161-48a2-ab82-1ab40dd70eae" />
+## 📸 Dashboard Preview
 
+### Executive Overview & Climate Trends
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ae148ce4-c7d8-4ad9-9fc8-f5bd25a5cd19" width="48%" />
+  <img src="https://github.com/user-attachments/assets/091f0ccf-1331-49c1-9ee7-1a8b9514b82d" width="48%" />
+</p>
+
+### Model Performance & Forecasting Analysis
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f20ef7c8-0161-48a2-ab82-1ab40dd70eae" width="48%" />
+  <img src="https://github.com/user-attachments/assets/14762729-1b52-443b-8571-0e3f65d56c72" width="48%" />
+</p>
 
 ---
 
