@@ -37,19 +37,19 @@ The project combines:
 # 🔄 Project Workflow
 
 Raw Climate & Energy Data
-⬇️
+        ↓
 Data Cleaning & Integration
-⬇️
+        ↓
 Exploratory Data Analysis (EDA)
-⬇️
+        ↓
 Hypothesis Testing
-⬇️
+        ↓
 Feature Engineering
-⬇️
+        ↓
 Machine Learning Models
-⬇️
+        ↓
 Visualization & Dashboard
-⬇️
+        ↓
 Forecasting & Insights
 
 ---
@@ -213,6 +213,7 @@ Implemented baseline predictive models:
 | Random Forest Regression | 0.8335        |
 
 ✅ Random Forest achieved the strongest predictive performance and was selected as the best-performing baseline model.
+✅ Random Forest outperformed Ridge Regression by a substantial margin, indicating that nonlinear relationships between climate and energy variables are important for electricity demand prediction.
 
 ---
 
