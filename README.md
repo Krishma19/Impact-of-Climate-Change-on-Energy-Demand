@@ -222,17 +222,29 @@ Implemented baseline predictive models:
 ## 📦 Project Deliverables
 
 ✅ Integrated Climate-Energy Dataset
+
 ✅ Exploratory Data Analysis (EDA)
+
 ✅ Hypothesis Testing
+
 ✅ Feature Engineering
+
 ✅ Ridge Regression Baseline Model
+
 ✅ Random Forest Baseline Model
+
 ✅ Model Comparison Analysis
+
 ✅ Climate Impact Ranking Analysis
+
 ✅ Renewable Energy Impact Ranking Analysis
+
 ✅ Visualization Suite
+
 ✅ Interactive Streamlit Dashboard
+
 ✅ Forecasting Analysis
+
 ✅ Final Capstone Report
 ---
 
@@ -314,11 +326,17 @@ streamlit run dashboard/app.py
 # 💡 Key Findings
 
 ✅ Global electricity demand increased substantially between 2001 and 2022.
+
 ✅ Temperature change demonstrated measurable relationships with electricity demand across multiple countries.
+
 ✅ GDP and population emerged as major drivers of electricity demand.
+
 ✅ Several countries showed strong climate sensitivity, with temperature-demand correlations above 0.70.
+
 ✅ Renewable energy adoption aligned positively with electricity demand growth in many countries.
+
 ✅ Random Forest Regression achieved the highest predictive performance (R² = 0.8335).
+
 ✅ Machine learning models outperformed traditional linear approaches for electricity demand forecasting.
 
 ---
@@ -354,12 +372,19 @@ streamlit run dashboard/app.py
 ## 🔮 Future Research Directions
 
 🌍 Expand analysis to include precipitation, humidity, drought severity, and extreme weather events.
+
 📈 Apply advanced forecasting models such as ARIMA, Prophet, LSTM, and Transformer-based approaches.
+
 🗺️ Conduct region-specific climate-energy analyses.
+
 ⚡ Incorporate real-time energy consumption and smart-grid data.
+
 🤖 Explore deep learning and ensemble learning techniques.
+
 🏛️ Investigate the impact of government energy policies and carbon pricing mechanisms.
+
 🌱 Evaluate renewable energy transitions and electrification strategies.
+
 ☁️ Deploy the framework as a cloud-based decision-support system.
 
 ---
