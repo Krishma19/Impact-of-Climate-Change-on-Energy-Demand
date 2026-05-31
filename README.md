@@ -249,6 +249,10 @@ Implemented baseline predictive models:
 
 # 📸 Dashboard Preview
 
+<img width="1920" height="1008" alt="Dashboard_Overview" src="https://github.com/user-attachments/assets/ae148ce4-c7d8-4ad9-9fc8-f5bd25a5cd19" />
+<img width="947" height="460" alt="image" src="https://github.com/user-attachments/assets/091f0ccf-1331-49c1-9ee7-1a8b9514b82d" />
+<img width="930" height="457" alt="image" src="https://github.com/user-attachments/assets/f20ef7c8-0161-48a2-ab82-1ab40dd70eae" />
+
 
 ---
 
