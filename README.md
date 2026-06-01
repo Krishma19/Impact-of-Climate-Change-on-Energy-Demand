@@ -10,7 +10,7 @@
 
 ## 📖 Project Overview
 
-This capstone project analyzes the relationship between climate change indicators and electricity demand across approximately **150 countries** using yearly data from **2001–2022**.
+This capstone project analyzes the relationship between climate change indicators and electricity demand across approximately **192 countries** using yearly data from **2001–2022**.
 
 In this study, **energy demand refers specifically to electricity demand per capita**, representing the average electricity consumption per person within a country.
 
@@ -37,19 +37,19 @@ The project combines:
 # 🔄 Project Workflow
 
 Raw Climate & Energy Data
-⬇️
+        ↓
 Data Cleaning & Integration
-⬇️
+        ↓
 Exploratory Data Analysis (EDA)
-⬇️
+        ↓
 Hypothesis Testing
-⬇️
+        ↓
 Feature Engineering
-⬇️
+        ↓
 Machine Learning Models
-⬇️
+        ↓
 Visualization & Dashboard
-⬇️
+        ↓
 Forecasting & Insights
 
 ---
@@ -111,7 +111,7 @@ https://www.fao.org/faostat/en/#data/ET
 🔗 **World Bank Open Data**
 https://data.worldbank.org/
 
-These datasets were cleaned, validated, and integrated into a unified country-year analytical dataset covering approximately **150 countries from 2001–2022**.
+These datasets were cleaned, validated, and integrated into a unified country-year analytical dataset covering approximately **192 countries from 2001–2022**.
 
 
 ---
@@ -196,13 +196,14 @@ Implemented baseline predictive models:
 
 ## 5️⃣ Visualization & Dashboard Development
 
-* Climate Trend Visualizations
-* Correlation Heatmaps
-* Model Comparison Charts
-* Feature Importance Analysis
-* Interactive Streamlit Dashboard
-* Forecasting Analysis
-
+- Climate Trend Visualizations
+- Correlation Heatmaps
+- Climate Impact Ranking Analysis
+- Renewable Impact Ranking Analysis
+- Model Comparison Charts
+- Feature Importance Analysis
+- Interactive Streamlit Dashboard
+- Forecasting Analysis
 ---
 
 # 🏆 Model Performance
@@ -214,21 +215,37 @@ Implemented baseline predictive models:
 
 ✅ Random Forest achieved the strongest predictive performance and was selected as the best-performing baseline model.
 
+✅ Random Forest outperformed Ridge Regression by a substantial margin, indicating that nonlinear relationships between climate and energy variables are important for electricity demand prediction.
+
 ---
 
-# 📦 Project Deliverables
+## 📦 Project Deliverables
 
-* ✅ Integrated Climate-Energy Dataset
-* ✅ Exploratory Data Analysis (EDA)
-* ✅ Hypothesis Testing
-* ✅ Feature Engineering
-* ✅ Ridge Regression Baseline Model
-* ✅ Random Forest Baseline Model
-* ✅ Model Comparison Analysis
-* ✅ Visualization Suite
-* ✅ Interactive Streamlit Dashboard
-* ✅ Forecasting Analysis
-* ✅ Final Capstone Report
+✅ Integrated Climate-Energy Dataset
+
+✅ Exploratory Data Analysis (EDA)
+
+✅ Hypothesis Testing
+
+✅ Feature Engineering
+
+✅ Ridge Regression Baseline Model
+
+✅ Random Forest Baseline Model
+
+✅ Model Comparison Analysis
+
+✅ Climate Impact Ranking Analysis
+
+✅ Renewable Energy Impact Ranking Analysis
+
+✅ Visualization Suite
+
+✅ Interactive Streamlit Dashboard
+
+✅ Forecasting Analysis
+
+✅ Final Capstone Report
 
 ---
 
@@ -249,7 +266,23 @@ Implemented baseline predictive models:
 
 # 📸 Dashboard Preview
 
+<<<<<<< HEAD
     "add images"
+=======
+### Executive Overview & Climate Trends
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ae148ce4-c7d8-4ad9-9fc8-f5bd25a5cd19" width="48%" />
+  <img src="https://github.com/user-attachments/assets/091f0ccf-1331-49c1-9ee7-1a8b9514b82d" width="48%" />
+</p>
+
+### Model Performance & Forecasting Analysis
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/f20ef7c8-0161-48a2-ab82-1ab40dd70eae" width="48%" />
+  <img src="https://github.com/user-attachments/assets/14762729-1b52-443b-8571-0e3f65d56c72" width="48%" />
+</p>
+>>>>>>> cbbbfae49a8710acd860bc4ab37a76aa7460ef9e
 
 ---
 
@@ -297,11 +330,31 @@ streamlit run dashboard/app.py
 
 # 💡 Key Findings
 
-* Climate change indicators significantly influence electricity demand patterns.
-* Temperature changes and CO₂ emissions demonstrate measurable relationships with electricity demand.
-* Economic and renewable energy indicators contribute to variations in electricity consumption.
-* Random Forest produced the strongest predictive performance among baseline models.
-* Forecasting analysis highlights future electricity demand trends using historical climate and energy data.
+✅ Global electricity demand increased substantially between 2001 and 2022.
+
+✅ Temperature change demonstrated measurable relationships with electricity demand across multiple countries.
+
+✅ GDP and population emerged as major drivers of electricity demand.
+
+✅ Several countries showed strong climate sensitivity, with temperature-demand correlations above 0.70.
+
+✅ Renewable energy adoption aligned positively with electricity demand growth in many countries.
+
+✅ Random Forest Regression achieved the highest predictive performance (R² = 0.8335).
+
+✅ Machine learning models outperformed traditional linear approaches for electricity demand forecasting.
+
+---
+
+# 💼 Business Applications
+
+- Long-term electricity demand forecasting
+- Energy infrastructure and grid planning
+- Climate adaptation strategy development
+- Renewable energy investment planning
+- Utility resource allocation
+- Sustainability and carbon-reduction planning
+- Climate-aware policy decision support
 
 ---
 
@@ -323,16 +376,24 @@ streamlit run dashboard/app.py
 
 # 🔮 Future Research Directions
 
-* 🌍 Expand analysis to include precipitation, humidity, drought severity, and extreme weather events.
-* 📈 Apply advanced forecasting models such as ARIMA, Prophet, LSTM, and Transformer-based approaches.
-* 🗺️ Conduct region-specific climate-energy analyses.
-* ⚡ Incorporate real-time energy consumption and smart-grid data.
-* 🤖 Explore deep learning and ensemble learning techniques.
-* 🏛️ Investigate the impact of government energy policies and carbon pricing mechanisms.
-* 🌱 Evaluate renewable energy transitions and electrification strategies.
-* ☁️ Deploy the framework as a cloud-based decision-support system.
+🌍 Expand analysis to include precipitation, humidity, drought severity, and extreme weather events.
+
+📈 Apply advanced forecasting models such as ARIMA, Prophet, LSTM, and Transformer-based approaches.
+
+🗺️ Conduct region-specific climate-energy analyses.
+
+⚡ Incorporate real-time energy consumption and smart-grid data.
+
+🤖 Explore deep learning and ensemble learning techniques.
+
+🏛️ Investigate the impact of government energy policies and carbon pricing mechanisms.
+
+🌱 Evaluate renewable energy transitions and electrification strategies.
+
+☁️ Deploy the framework as a cloud-based decision-support system.
 
 ---
+
 
 # 📚 References
 
