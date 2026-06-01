@@ -412,7 +412,7 @@ streamlit run dashboard/app.py
 | Krishma Patel   | https://github.com/Krishma19              |
 | Mohammed Shoaib | https://github.com/mshoaib239             |
 | Ritu Patel      | https://github.com/RituPatel21            |
-| Sunny Garasiya  | https://github.com/SunnyGarasiya0001      |
+| Sanni Garasiya  | https://github.com/SunnyGarasiya0001      |
 | Yuvraj Thakur   | https://github.com/yuvrajthakur2709-maker |
 
 ---
