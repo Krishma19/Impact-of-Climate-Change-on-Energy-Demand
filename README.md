@@ -266,8 +266,6 @@ Implemented baseline predictive models:
 
 # 📸 Dashboard Preview
 
-
-=======
 ### Executive Overview & Climate Trends
 
 <p align="center">
@@ -281,7 +279,7 @@ Implemented baseline predictive models:
   <img src="https://github.com/user-attachments/assets/f20ef7c8-0161-48a2-ab82-1ab40dd70eae" width="48%" />
   <img src="https://github.com/user-attachments/assets/14762729-1b52-443b-8571-0e3f65d56c72" width="48%" />
 </p>
->>>>>>> cbbbfae49a8710acd860bc4ab37a76aa7460ef9e
+
 
 ---
 
