@@ -268,7 +268,8 @@ Implemented baseline predictive models:
 
 ## Live Dashboard
 
-The interactive Streamlit dashboard for this project is available here:
+The interactive Streamlit dashboard for this project is available here: 
+
 🔗 https://impact-of-climate-change-on-energy-demand-glmjbxywlzmzowrwenbe.streamlit.app/
 
 ---
